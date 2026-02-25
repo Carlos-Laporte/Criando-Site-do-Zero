@@ -1,0 +1,60 @@
+body{
+    background: url('../img/image-login.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+div.loginHeader{
+    text-align: center;
+}
+
+div.loginHeader{
+    margin-bottom: 60px;
+}
+
+div.loginHeader h1{
+    font-size: 100px;
+    color: #f685a2;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.loginHeader p{
+    color: #ffdae3;
+    font-size: 50px;
+    margin: 0px;
+    display: inline-block;
+}
+
+div.loginHeader p:after{
+    content: '';
+    display: block;
+    height: 5px;
+    background: #f685a2;
+    margin: 0 auto;
+}
+
+div.loginBody form{
+    margin: 0px auto;
+    width: 450px;
+    background: rgba(0, 0, 0, 0.466);
+    padding: 50px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+div.loginInputsConteiner{
+    margin-top: 20px;
+}
+
+div.loginInputsConteiner label{
+    display: block;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+div.loginInputsContainer input{
+    height: 25px;
+    width: 100%;
+}
