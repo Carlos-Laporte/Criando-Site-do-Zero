@@ -1,6 +1,7 @@
 body{
     background: url('../img/image-login.jpg') no-repeat center center fixed;
     background-size: cover;
+    font-family: arial;
 }
 
 div.loginHeader{
@@ -43,7 +44,7 @@ div.loginBody form{
 }
 
 div.loginInputsConteiner{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 div.loginInputsConteiner label{
@@ -54,7 +55,40 @@ div.loginInputsConteiner label{
     color: white;
 }
 
-div.loginInputsContainer input{
+div.loginInputsConteiner input{
     height: 25px;
     width: 100%;
+    border: 2px solid #3a375f;
+    font-size: 15px;
+    padding: 5px;
+    font-style: italic;
+}
+
+div.loginButtonConteiner{
+    margin-top: 40px;
+    text-align: center;
+}
+
+div.loginButtonConteiner button{
+    font-size: 20px;
+    padding: 15px;
+    width: 40%;
+    color: white;
+    background: #f685a2;
+    border: 2px solid #3a375f;
+    border-radius: 8px;
+}
+
+div.loginCadastrar{
+    text-align: center;
+}
+
+div.loginCadastrar a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+div.loginCadastrar a:hover{
+    text-decoration: underline;
 }
