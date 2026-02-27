@@ -1,0 +1,99 @@
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+
+body#registerBody{
+    background: url('../img/image-login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: arial;
+}
+
+div.registerHeader{
+    text-align: center;
+}
+
+div.registerHeader{
+    margin-bottom: 60px;
+}
+
+div.registerHeader h1{
+    font-size: 100px;
+    color: #f685a2;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.registerHeader p{
+    color: #ffdae3;
+    font-size: 50px;
+    margin: 0px;
+    display: inline-block;
+}
+
+div.registerHeader p:after{
+    content: '';
+    display: block;
+    height: 5px;
+    background: #f685a2;
+    margin: 0 auto;
+}
+
+div.registerBody form{
+    margin: 0px auto;
+    width: 450px;
+    background: rgba(0, 0, 0, 0.466);
+    padding: 50px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+div.registerInputsConteiner{
+    margin-top: 30px;
+}
+
+div.registerInputsConteiner label{
+    display: block;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+div.registerInputsConteiner input{
+    height: 25px;
+    width: 100%;
+    border: 2px solid #3a375f;
+    font-size: 15px;
+    padding: 5px;
+    font-style: italic;
+}
+
+div.registerButtonConteiner{
+    margin-top: 40px;
+    text-align: center;
+}
+
+div.registerButtonConteiner button{
+    font-size: 20px;
+    padding: 15px;
+    width: 40%;
+    color: white;
+    background: #f685a2;
+    border: 2px solid #3a375f;
+    border-radius: 8px;
+}
+
+div.registerCadastrar{
+    text-align: center;
+}
+
+div.registerCadastrar a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+div.registerCadastrar a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}

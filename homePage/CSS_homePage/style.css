@@ -6,10 +6,21 @@ body{
     font-family: arial;
 }
 
+
 div.header{
     width: 100%;
-    height: 20px;
+    padding: 20px 0px;
     background: #f685a1;
+    text-align: right;
+}
+
+div.header a{
+    font-size: 20px;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 div.banner{
@@ -17,6 +28,7 @@ div.banner{
     background-size: cover;
     padding: 100px;
     padding-bottom: 100px;
+    height: 80vh;
 }
 
 div.homepageConteiner{
@@ -66,18 +78,25 @@ div.bannerIcons a:hover{
     color: white;
     font-size: 30px;
     background: #f685a1;
-    transition: .3s all;
+    transition: .1s all;
 }
 
 div.homepageFeatures{
     display: flex;
     flex-direction: row;
-    padding: 20px 0px;
+    padding: 50px 0px;
+    height: 40vh;
 }
 
 div.homepageFeature{
     padding: 10px 20px;
     text-align: center;
+}
+
+div.homepageFeature:hover{
+    border-top: 2px solid #f685a1;
+    border-bottom: 2px solid #f685a1;
+    transition: 0.3s all;
 }
 
 div.homepageFeature span.featureIcon{
@@ -94,10 +113,12 @@ div.homepageFeature span.featureIcon{
 
 div.homepageFeature h3.featureTitle{
     margin-bottom: 20px;
+    font-size: 25px;
 }
 
 div.homepageFeature p.featureDescription{
     color: #848484;
+    font-size: 18px;
 }
 
 div.homepageNotiFile{
@@ -108,6 +129,10 @@ div.homepageNotiFile{
 div.homepageNotiFileConteiner{
     display: flex;
     flex-direction: row;
+}
+
+div.emailForm h3{
+    font-size: 25px;
 }
 
 div.homepageNotiFileConteiner > div{
@@ -129,7 +154,7 @@ div.homepageNotiFile h3{
 
 div.homepageNotiFile p{
     color: #848484;
-    line-height: 150%;
+    line-height: 200%;
     margin-bottom: 30px;
 }
 
@@ -181,10 +206,12 @@ div.homepageConteinerSocial{
 }
 
 h3.socialTitle{
+    font-size: 30px;
     padding: 20px;
 }
 
 p.socialDescription{
+    font-size: 20px;
     padding: 20px;
     padding-top: 0px;
     color: #848484;
