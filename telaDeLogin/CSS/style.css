@@ -1,6 +1,11 @@
-body{
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+
+body#loginBody{
     background: url('../img/image-login.jpg') no-repeat center center fixed;
     background-size: cover;
+    font-family: arial;
 }
 
 div.loginHeader{
@@ -43,7 +48,7 @@ div.loginBody form{
 }
 
 div.loginInputsConteiner{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 div.loginInputsConteiner label{
@@ -54,7 +59,40 @@ div.loginInputsConteiner label{
     color: white;
 }
 
-div.loginInputsContainer input{
+div.loginInputsConteiner input{
     height: 25px;
     width: 100%;
+    border: 2px solid #3a375f;
+    font-size: 15px;
+    padding: 5px;
+    font-style: italic;
+}
+
+div.loginButtonConteiner{
+    margin-top: 40px;
+    text-align: center;
+}
+
+div.loginButtonConteiner button{
+    font-size: 20px;
+    padding: 15px;
+    width: 40%;
+    color: white;
+    background: #f685a2;
+    border: 2px solid #3a375f;
+    border-radius: 8px;
+}
+
+div.loginCadastrar{
+    text-align: center;
+}
+
+div.loginCadastrar a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+div.loginCadastrar a:hover{
+    text-decoration: underline;
 }
