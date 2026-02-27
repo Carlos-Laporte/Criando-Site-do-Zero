@@ -17,9 +17,15 @@ div.header{
 div.header a{
     font-size: 20px;
     color: white;
-    border: 2px solid white;
     padding: 5px 10px;
+    margin-right: 20px;
     text-decoration: none;
+    border: 2px solid transparent;
+    border-bottom: 2px solid white;
+}
+
+div.header a:hover{
+    border: 2px solid white;
     border-radius: 5px;
 }
 
