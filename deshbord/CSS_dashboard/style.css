@@ -1,0 +1,64 @@
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+#dashboardMainConteiner{
+    display: flex;
+    flex-direction: row;
+}
+
+
+div.dashboard_sidebar{
+    width: 20%;
+    background: #323232;
+    height: 100vh;
+}
+
+div.dashboard_content_conteiner{
+    width: 70%;
+}
+
+h3.dashboard_logo{
+    color: #f685a1;
+    font-size: 80px;
+    text-align: center;
+}
+
+div.dashboard_sidebar_user{
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+div.dashboard_sidebar_user img{
+    width: 100px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: 5px;
+}
+
+div.dashboard_sidebar_user span{
+    top: 20%;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+    padding: 10px 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+    
+}
+
+ul.dashboard_menu_lists li{
+    padding-top: 30px;
+}
+
+ul.dashboard_menu_lists li a{
+    text-decoration: none;
+    color: white;
+}
