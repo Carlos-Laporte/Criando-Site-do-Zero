@@ -3,7 +3,7 @@
 
 
 body#registerBody{
-    background: url('../img/image-login.jpg') no-repeat center center fixed;
+    background: url('../img/imagem_tela_inicial.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: arial;
 }
