@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IMS Login - Inventory Management System</title>
-        <link rel="stylesheet" href="CSS_telaDeCadastro/style.css">
+        <link rel="stylesheet" href="../CSS/styleCadastro.css">
     </head>
     <body id="registerBody">
         <div class="container">
@@ -36,7 +36,7 @@
                     </div>
                 </form>
                 <div class="registerCadastrar">
-                    <a href="../telaDeLogin/index.html">Registration confirmed! Click here to return to the login screen.</a>
+                    <a href="../../login.php">Registration confirmed! Click here to return to the login screen.</a>
                 </div>
             </div>
         </div>
