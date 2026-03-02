@@ -30,7 +30,7 @@ div.header a:hover{
 }
 
 div.banner{
-    background: url('../img_homepage/conteiners-homepage.jpg') no-repeat center center fixed ;
+    background: url('../img/conteiners-homepage.jpg') no-repeat center center fixed ;
     background-size: cover;
     padding: 100px;
     padding-bottom: 100px;

@@ -8,7 +8,7 @@
 
 
 div.dashboard_sidebar{
-    width: 30%;
+    width: 25%;
     background: #323232;
     height: 100vh;
 }
@@ -65,7 +65,11 @@ ul.dashboard_menu_lists li a{
     color: white;
     height: 100%;
     display: block;
-    font-size: 20px;
+    font-size: 25px;
+}
+
+ul.dashboard_menu_lists li a i{
+    padding-right: 10px;
 }
 
 ul.dashboard_menu_lists li:hover{
