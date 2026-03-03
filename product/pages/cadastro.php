@@ -8,35 +8,36 @@
         <link rel="stylesheet" href="../CSS/styleCadastro.css">
     </head>
     <body id="registerBody">
+
         <div class="container">
             <div class="registerHeader">
                 <h1>IMS</h1>
                 <p>INVENTORY MANAGEMENT SYSTEM</p>
             </div>
             <div class="registerBody">
-                <form action="">
+                <form action="cadastro.php" method="POST">
                     <div class="registerInputsConteiner">
-                        <label for="">Username</label>
-                        <input type="text" placeholder="Username">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="registerInputsConteiner">
-                        <label for="">telephone number</label>
-                        <input type="text" placeholder="Number">
+                        <label for="telefone">Telephone number</label>
+                        <input type="text" placeholder="Number" name="telefone">
                     </div>
                     <div class="registerInputsConteiner">
-                        <label for="">Password</label>
-                        <input type="password" placeholder="Password">
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Password" name="password" required>
                     </div>
                     <div class="registerInputsConteiner">
-                        <label for="">Confirm your password</label>
-                        <input type="password" placeholder="Password">
+                        <label for="password_confirm">Confirm your password</label>
+                        <input type="password" placeholder="Password" name="password_confirm" required>
                     </div>
                     <div class="registerButtonConteiner">
                         <button>Register</button>
                     </div>
                 </form>
                 <div class="registerCadastrar">
-                    <a href="../../login.php">Registration confirmed! Click here to return to the login screen.</a>
+                    <a href="login.php">Already have an account? <strong>Login here!</strong></a>
                 </div>
             </div>
         </div>

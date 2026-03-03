@@ -7,17 +7,20 @@
         include('../database/connection.php');
 
         $username = $_POST['username'];
-        $password = $_POST['password']; 
-        
-        $query = "SELECT * FROM user WHERE email=  ?";
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM user WHERE email = ?";
         $stmt = $conn->prepare($query);
         $stmt->execute([$username]);
-        
+
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if($result){
             if(password_verify($password, $result['password'])){
-                echo "Login successful!";
+                $_SESSION['user_id'] = $result['id'];
+                $_SESSION['user_email'] = $result['email'];
+                header("Location: dashboard.php");
+                exit();
             } else{
                 $error_message = "incorrect password!";
             }
