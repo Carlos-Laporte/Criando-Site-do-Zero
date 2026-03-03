@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $first_name = $_SESSION['user_first_name'] ?? 'User';
+    $last_name = $_SESSION['user_last_name'] ?? '';
+    $full_name = trim($first_name . ' ' . $last_name);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
     <head>
@@ -8,12 +15,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
     <body>
-        <?php
-            session_start();
-            $first_name = $_SESSION['user_first_name'] ?? 'User';
-            $last_name = $_SESSION['user_last_name'] ?? '';
-            $full_name = trim($first_name . ' ' . $last_name);
-        ?>
         <div id="dashboardMainConteiner">
             <div class="dashboard_sidebar" id="dashboard_sidebar">
                 <h3 class="dashboard_logo">IMS</h3>
