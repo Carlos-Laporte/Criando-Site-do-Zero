@@ -8,12 +8,18 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
     <body>
+        <?php
+            session_start();
+            $first_name = $_SESSION['user_first_name'] ?? 'User';
+            $last_name = $_SESSION['user_last_name'] ?? '';
+            $full_name = trim($first_name . ' ' . $last_name);
+        ?>
         <div id="dashboardMainConteiner">
             <div class="dashboard_sidebar" id="dashboard_sidebar">
                 <h3 class="dashboard_logo">IMS</h3>
                 <div class="dashboard_sidebar_user">
                     <img src="../img/image_perfil.jpg" alt="User image." id="userImage">
-                    <span>Gomez</span>
+                    <span><?= htmlspecialchars($full_name) ?></span>
                 </div>
                 <div class="dashboard_sidebar_user_menus">
                     <ul class="dashboard_menu_lists">
@@ -21,7 +27,19 @@
                             <a href=""><i class="bi bi-speedometer2"></i><span class="menuText">Dashboard</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="bi bi-speedometer2"></i><span class="menuText">Dashboard</span></a>
+                            <a href=""><i class="bi bi-megaphone"></i><span class="menuText">Campaigns</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="bi bi-currency-dollar"></i></i><span class="menuText">Revenue Management</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="bi bi-journal-bookmark-fill"></i><span class="menuText">Accounts Receivable</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="bi bi-gear-wide-connected"></i><span class="menuText">Configuration</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="bi bi-graph-up-arrow"></i><span class="menuText">Stats</span></a>
                         </li>
                     </ul>
                 </div>
@@ -29,7 +47,7 @@
             <div class="dashboard_content_conteiner" id="dashboard_content_conteiner">
                 <div class="dashboard_topNav">
                     <a href="" class="list"><i class="bi bi-list"></i></a>
-                    <a href="../../login.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
+                    <a href="login.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
                 </div>
                 <div class="dashboard_content">
                     <div class="dashboard_content_main">

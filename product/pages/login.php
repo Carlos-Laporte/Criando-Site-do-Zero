@@ -19,6 +19,8 @@
             if(password_verify($password, $result['password'])){
                 $_SESSION['user_id'] = $result['id'];
                 $_SESSION['user_email'] = $result['email'];
+                $_SESSION['user_first_name'] = $result['first name'];
+                $_SESSION['user_last_name'] = $result['last name'];
                 header("Location: dashboard.php");
                 exit();
             } else{
