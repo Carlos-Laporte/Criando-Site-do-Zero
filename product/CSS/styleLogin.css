@@ -96,3 +96,11 @@ div.loginCadastrar a{
 div.loginCadastrar a:hover{
     text-decoration: underline;
 }
+
+div#errorMessage{
+    background: #fff;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    padding: 10px;
+}
