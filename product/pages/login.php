@@ -1,11 +1,29 @@
 <?php
+    session_start();
+    
     $error_message = '';
     
     if($_POST){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        
         include('../database/connection.php');
+
+        $username = $_POST['username'];
+        $password = $_POST['password']; 
+        
+        $query = "SELECT * FROM user WHERE email=  ?";
+        $stmt = $conn->prepare($query);
+        $stmt->execute([$username]);
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($result){
+            if(password_verify($password, $result['password'])){
+                echo "Login successful!";
+            } else{
+                $error_message = "incorrect password!";
+            }
+        } else{
+            $error_message = "User not found!";
+        }
     }
 
 ?>
@@ -19,9 +37,14 @@
     <link rel="stylesheet" href="../CSS/styleLogin.css">
 </head>
 <body id="loginBody">
-    <div>
-        <p>Error: <?= $error_message ?></p>
-    </div>
+    <?php
+            if(!empty($error_message)){ ?>
+
+                <div id="errorMessage">
+                    <p>Error: <?= $error_message ?></p>
+                </div>
+
+    <?php   } ?>
     <div class="container">
         <div class="loginHeader">
             <h1>IMS</h1>
@@ -30,11 +53,11 @@
         <div class="loginBody">
             <form action="login.php" method="POST">
                 <div class="loginInputsConteiner">
-                    <label for="">Username</label>
+                    <label for="username">Username</label>
                     <input type="text" placeholder="Username" name="username">
                 </div>
                 <div class="loginInputsConteiner">
-                    <label for="">Password</label>
+                    <label for="password">Password</label>
                     <input type="password" placeholder="Password" name="password">
                 </div>
                 <div class="loginButtonConteiner">
@@ -42,7 +65,7 @@
                 </div>
             </form>
             <div class="loginCadastrar">
-                    <a href="../cadastro.php">Don't have an account yet?<strong>Sign up!</strong></a>
+                    <a href="cadastro.php">Don't have an account yet?<strong>Sign up!</strong></a>
             </div>
         </div>
     </div>
