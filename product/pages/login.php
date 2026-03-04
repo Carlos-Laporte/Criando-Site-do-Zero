@@ -3,13 +3,13 @@
     
     $error_message = '';
     
-    if($_POST){
-        include('../database/connection.php');
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
+        require_once('../configuration/connection.php');
 
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM user WHERE email = ?";
+        $query = "SELECT * FROM users WHERE email = ?";
         $stmt = $conn->prepare($query);
         $stmt->execute([$username]);
 
@@ -19,8 +19,9 @@
             if(password_verify($password, $result['password'])){
                 $_SESSION['user_id'] = $result['id'];
                 $_SESSION['user_email'] = $result['email'];
-                $_SESSION['user_first_name'] = $result['first name'];
-                $_SESSION['user_last_name'] = $result['last name'];
+                $_SESSION['user_first_name'] = $result['first_name'];
+                $_SESSION['user_last_name'] = $result['last_name'];
+                
                 header("Location: dashboard.php");
                 exit();
             } else{
