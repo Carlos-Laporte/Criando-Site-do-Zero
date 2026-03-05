@@ -4,6 +4,6 @@
     session_destroy();
     $full_name = $_SESSION['full_name'];
 
-    header("Location: login.php");
+    header("Location: ../pages/login.php");
     exit();
 ?>

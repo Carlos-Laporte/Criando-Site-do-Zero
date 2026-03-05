@@ -1,5 +1,8 @@
 <?php
     session_start();
+    
+    require_once('../configuration/connection.php');
+
     $first_name = $_SESSION['user_first_name'] ?? 'User';
     $last_name = $_SESSION['user_last_name'] ?? '';
     $full_name = trim($first_name . ' ' . $last_name);
@@ -48,7 +51,7 @@
             <div class="dashboard_content_conteiner" id="dashboard_content_conteiner">
                 <div class="dashboard_topNav">
                     <a href="" class="list"><i class="bi bi-list"></i></a>
-                    <a href="login.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
+                    <a href="../configuration/log_out.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
                 </div>
                 <div class="dashboard_content">
                     <div class="dashboard_content_main">
