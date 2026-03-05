@@ -1,11 +1,32 @@
 <?php
     session_start();
-    
-    require_once('../configuration/connection.php');
 
-    $first_name = $_SESSION['user_first_name'] ?? 'User';
-    $last_name = $_SESSION['user_last_name'] ?? '';
-    $full_name = trim($first_name . ' ' . $last_name);
+    require_once('../configuration/connection.php');
+    
+    if(!isset($_SESSION['user_email'])){
+        header("Location: ../pages/login.php");
+        exit();
+    }
+
+    if(isset($_SESSION['user_email'])){
+        $email = $_SESSION['user_email'];
+        $query = "SELECT * FROM users WHERE email = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->execute([$email]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($result){
+            $_SESSION['user_first_name'] = $result['first_name'];
+            $_SESSION['user_last_name'] = $result['last_name'];
+
+            $full_name = $result['first_name'] . ' ' . $result['last_name'];
+            $_SESSION['full_name'] = $full_name;
+        }
+    } else{
+        header("Location: login.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +72,7 @@
             <div class="dashboard_content_conteiner" id="dashboard_content_conteiner">
                 <div class="dashboard_topNav">
                     <a href="" class="list"><i class="bi bi-list"></i></a>
-                    <a href="../configuration/log_out.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
+                    <a href="../authentication/log_out.php" class="log-out"><i class="bi bi-power"></i> Log-out</a>
                 </div>
                 <div class="dashboard_content">
                     <div class="dashboard_content_main">
