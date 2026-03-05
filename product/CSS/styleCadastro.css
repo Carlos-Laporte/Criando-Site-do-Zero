@@ -8,6 +8,13 @@ body#registerBody{
     font-family: arial;
 }
 
+div#errorMessage{
+    background: white;
+    color: red;
+    padding: 15px;
+    text-align: center;
+}
+
 div.registerHeader{
     text-align: center;
 }

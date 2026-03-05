@@ -1,12 +1,10 @@
 <?php
     error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    
-    require_once('../configuration/connection.php');
 
     $error_message = '';
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        require_once('../configuration/connection.php');
 
         $firstName       = trim($_POST['first_name']);
         $lastName        = trim($_POST['last_name']);
@@ -33,7 +31,7 @@
 
                     echo "DEBUG: About to insert - First: $firstName, Last: $lastName, Email: $email<br>";
 
-                    $sql = "INSERT INTO users (`first name`, `last name`, email, password) 
+                    $sql = "INSERT INTO users (`first_name`, `last_name`, email, password) 
                             VALUES (:first_name, :last_name, :email, :password)";
                     $stmt = $conn->prepare($sql);
                     
@@ -73,21 +71,20 @@
         <link rel="stylesheet" href="../CSS/styleCadastro.css">
     </head>
     <body id="registerBody">
+        <?php
+            if(!empty($error_message)) { ?>
 
+                <div id="errorMessage">
+                    <p>Error: <?= $error_message ?></p>
+                </div>
+
+        <?php   } ?>
         <div class="container">
             <div class="registerHeader">
                 <h1>IMS</h1>
                 <p>INVENTORY MANAGEMENT SYSTEM</p>
             </div>
             <div class="registerBody">
-                <?php
-                    if(!empty($error_message)){ ?>
-
-                        <div id="errorMessage">
-                            <p>Error: <?= $error_message ?></p>
-                        </div>
-
-                <?php   } ?>
                 <form action="cadastro.php" method="POST">
                     <div class="registerInputsConteiner">
                         <label for="first_name">First name</label>
@@ -114,7 +111,7 @@
                     </div>
                 </form>
                 <div class="registerCadastrar">
-                    <a href="login.php">Already have an account? <strong>Login here!</strong></a>
+                    <a href="../../index.php">Do you want to go back to the homepage? <strong>Click here!</strong></a>
                 </div>
             </div>
         </div>
