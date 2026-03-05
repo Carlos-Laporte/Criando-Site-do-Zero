@@ -1,8 +1,11 @@
 <?php
+    session_start();
     $error_message = '';
 
+    require_once('../configuration/connection.php');
+    require_once('../authentication/auth.php');
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        require_once('../configuration/connection.php');
 
         $firstName       = trim($_POST['first_name']);
         $lastName        = trim($_POST['last_name']);
