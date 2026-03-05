@@ -1,6 +1,4 @@
 <?php
-    error_reporting(E_ALL);
-
     $error_message = '';
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -29,8 +27,6 @@
                 try {
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                    echo "DEBUG: About to insert - First: $firstName, Last: $lastName, Email: $email<br>";
-
                     $sql = "INSERT INTO users (`first_name`, `last_name`, email, password) 
                             VALUES (:first_name, :last_name, :email, :password)";
                     $stmt = $conn->prepare($sql);
@@ -41,8 +37,6 @@
                         ':email'      => $email,
                         ':password'   => $hashedPassword
                     ]);
-                    
-                    echo "DEBUG: Insert result = " . ($result ? "TRUE" : "FALSE") . "<br>";
                     
                     if ($result) {
                         echo "DEBUG: Success! Redirecting...<br>";
@@ -75,7 +69,7 @@
             if(!empty($error_message)) { ?>
 
                 <div id="errorMessage">
-                    <p>Error: <?= $error_message ?></p>
+                    <p>Error: <?= htmlspecialchars($error_message) ?></p>
                 </div>
 
         <?php   } ?>
