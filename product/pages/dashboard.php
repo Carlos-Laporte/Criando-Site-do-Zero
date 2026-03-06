@@ -2,11 +2,6 @@
     session_start();
 
     require_once('../configuration/connection.php');
-    
-    if(!isset($_SESSION['user_email'])){
-        header("Location: ../pages/login.php");
-        exit();
-    }
 
     if(isset($_SESSION['user_email'])){
         $email = $_SESSION['user_email'];
