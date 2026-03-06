@@ -2,8 +2,7 @@
     session_start();
     session_unset();
     session_destroy();
-    $full_name = $_SESSION['full_name'];
 
-    header("Location: ../pages/login.php");
+    header("Location: ../../index.php");
     exit();
 ?>

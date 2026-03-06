@@ -3,7 +3,7 @@
     $error_message = '';
 
     require_once('../configuration/connection.php');
-    require_once('../authentication/auth.php');
+    require_once('../authentication/guest.php');
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
 
