@@ -92,7 +92,7 @@
                 <div class="dashboard_espaço">
                 </div>
                 <div class="dashboard_content">
-                    <div class="dashboard_content_main">
+                    <div id="dashboard_content_form">
                         <form method="POST"  class="userForm">
                             <div class="registerInputsConteiner">
                                 <label for="first_name">First name</label>

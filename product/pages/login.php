@@ -7,12 +7,12 @@
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
 
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
         $query = "SELECT * FROM users WHERE email = ?";
         $stmt = $conn->prepare($query);
-        $stmt->execute([$username]);
+        $stmt->execute([$email]);
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -42,6 +42,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMS Login - Inventory Management System</title>
     <link rel="stylesheet" href="../CSS/styleLogin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body id="loginBody">
     <?php
@@ -59,9 +60,16 @@
         </div>
         <div class="loginBody">
             <form action="login.php" method="POST">
+                <div class="topIcon">
+                    <span><i class="bi bi-lock-fill"></i></span>
+                </div>
+                <div class="topText">
+                    <h2>Welcome Back!</h2>
+                    <p>Login to your account to manage your inventory.</p>
+                </div>
                 <div class="loginInputsConteiner">
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="Username" name="username">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email" name="email">
                 </div>
                 <div class="loginInputsConteiner">
                     <label for="password">Password</label>
@@ -70,10 +78,28 @@
                 <div class="loginButtonConteiner">
                     <button>Login</button>
                 </div>
-            </form>
-            <div class="loginCadastrar">
+                <div class="textIcons">
+                    <div class="line"></div>
+                    <div class="text">Or login with</div>
+                    <div class="line"></div>
+                </div>
+                <div class="iconsLogin">
+                    <a href="../oauth/google-login.php">
+                        <i class="bi bi-google"></i>
+                    </a>
+
+                    <a href="../oauth/github-login.php">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="../oauth/facebook-login.php">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </div>
+                <div class="loginCadastrar">
                     <a href="cadastro.php">Don't have an account yet?<strong>Sign up!</strong></a>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>
