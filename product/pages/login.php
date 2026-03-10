@@ -97,7 +97,7 @@
                     </a>
                 </div>
                 <div class="loginCadastrar">
-                    <a href="cadastro.php">Don't have an account yet?<strong>Sign up!</strong></a>
+                    <p>Don't have an account yet?<a href="cadastro.php"><strong>Sign up!</strong></a></p>
                 </div>
             </form>
         </div>

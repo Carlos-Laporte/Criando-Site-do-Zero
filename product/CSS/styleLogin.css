@@ -80,24 +80,6 @@ div.loginInputsConteiner input{
     font-style: italic;
 }
 
-div.textIcons{
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-div.textIcons div.line{
-    flex: 1;
-    border: 1px solid rgba(0, 0, 0, 0.411);
-    gap: 10px;
-}
-
-div.textIcons div.text{
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.411);
-}
-
 div.loginButtonConteiner{
     margin-top: 40px;
     text-align: center;
@@ -123,6 +105,24 @@ div.loginButtonConteiner button:active{
     box-shadow: 0 2px #d96c85;
     transition: 0.01s all;
     transform: scale(0.95);
+}
+
+div.textIcons{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+div.textIcons div.line{
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    gap: 10px;
+}
+
+div.textIcons div.text{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.411);
 }
 
 div.iconsLogin{
@@ -161,6 +161,7 @@ div.loginCadastrar a{
 }
 
 div.loginCadastrar a:hover{
+    font-weight: bold;
     text-decoration: underline;
 }
 
