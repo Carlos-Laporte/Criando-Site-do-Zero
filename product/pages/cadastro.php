@@ -66,6 +66,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IMS Login - Inventory Management System</title>
         <link rel="stylesheet" href="../CSS/styleCadastro.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     </head>
     <body id="registerBody">
         <?php
@@ -83,33 +84,58 @@
             </div>
             <div class="registerBody">
                 <form action="cadastro.php" method="POST">
-                    <div class="registerInputsConteiner">
-                        <label for="first_name">First name</label>
-                        <input type="text" placeholder="First name" name="first_name" required>
+                    <div class="topIcon">
+                        <i class="bi bi-person-fill-add"></i>
                     </div>
-                    <div class="registerInputsConteiner">
-                        <label for="last_name">Last name</label>
-                        <input type="text" placeholder="Last name" name="last_name" required>
+                    <div class="topRegister">
+                        <h2>Create your account</h2>
+                        <p>Enter your details to create an account.</p>
+                    </div>
+                    <div class="registerRow">
+                        <div class="registerInputsConteiner">
+                            <label for="first_name">First name</label>
+                            <input type="text" id="first_name" placeholder="First name" name="first_name" required autocomplete="given-name">
+                        </div>
+                        <div class="registerInputsConteiner">
+                            <label for="last_name">Last name</label>
+                            <input type="text" id="last_name" placeholder="Last name" name="last_name" required autocomplete="family-name">
+                        </div>
                     </div>
                     <div class="registerInputsConteiner">
                         <label for="email">Email</label>
-                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="email" id="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="registerInputsConteiner">
                         <label for="password">Password</label>
-                        <input type="password" placeholder="Password" name="password" required>
+                        <input type="password" id="password" placeholder="Password" name="password" required>
                     </div>
                     <div class="registerInputsConteiner">
                         <label for="password_confirm">Confirm your password</label>
-                        <input type="password" placeholder="Password" name="password_confirm" required>
+                        <input type="password" id="password_confirm" placeholder="Password" name="password_confirm" required>
                     </div>
                     <div class="registerButtonConteiner">
                         <button>Register</button>
                     </div>
+                    <div class="textIcons">
+                        <div class="line"></div>
+                        <div class="text">Or login with</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="iconsCadastro">
+                        <a href="../oauth/google-login.php">
+                            <i class="bi bi-google"></i>
+                        </a>
+                        <a href="../oauth/github-login.php">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="../oauth/facebook-login.php">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="registerCadastrar">
+                        <p>Already have an account? <a href="login.php"><strong>Click here!</strong></a></p>
+                    </div>
                 </form>
-                <div class="registerCadastrar">
-                    <a href="../../index.php">Do you want to go back to the homepage? <strong>Click here!</strong></a>
-                </div>
             </div>
         </div>
     </body>

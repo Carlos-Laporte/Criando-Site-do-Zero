@@ -48,14 +48,36 @@ div.registerHeader p:after{
 div.registerBody form{
     margin: 0px auto;
     width: 450px;
-    background: rgba(0, 0, 0, 0.466);
-    padding: 50px;
-    border: 2px solid white;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.719);
+    background: rgb(228, 227, 227);
+}
+
+div.topIcon{
+    font-size: 50px;
+    color: #f685a2;
+    text-align: center;
+}
+
+div.topRegister{
+    font-size: 15px;
+    text-align: center;
+}
+
+div.registerRow{
+    display: flex;
+    gap: 15px;
+}
+
+div.registerRow div.registerInputsConteiner{
+    flex: 1;
 }
 
 div.registerInputsConteiner{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 div.registerInputsConteiner label{
@@ -63,20 +85,21 @@ div.registerInputsConteiner label{
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 div.registerInputsConteiner input{
     height: 25px;
     width: 100%;
     border: 2px solid #3a375f;
+    border-radius: 10px;
     font-size: 15px;
     padding: 5px;
     font-style: italic;
 }
 
 div.registerButtonConteiner{
-    margin-top: 40px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -90,12 +113,61 @@ div.registerButtonConteiner button{
     border-radius: 8px;
 }
 
+div.registerButtonConteiner button:hover{
+    background: #f685a1c7;
+    transition: 0.01s all;
+    transform: scale(1.05);
+}
+
+div.textIcons{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+div.textIcons div.line{
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    gap: 10px;
+}
+
+div.textIcons div.text{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.411);
+}
+
+div.iconsCadastro{
+    padding-top: 10px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+div.iconsCadastro a{
+    font-size:26px;
+    color:#f685a2;
+    transition:0.3s;
+}
+
+div.iconsCadastro a:hover{
+    transform:scale(1.2);
+    color:#ff9fb6;
+}
+
+div.registerButtonConteiner button:active{
+    box-shadow: 0 2px #d96c85;
+    transition: 0.01s all;
+    transform: scale(0.95);
+}
+
 div.registerCadastrar{
+    padding-top: 20px;
     text-align: center;
 }
 
 div.registerCadastrar a{
-    color: white;
+    color: #f685a2;
     font-size: 15px;
     text-decoration: none;
 }
