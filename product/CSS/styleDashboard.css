@@ -125,13 +125,14 @@ div.dashboard_content{
     background: white;
 }
 
+/* formulario de cadastro do user_add*/
+
 div#dashboard_content_form{
-    padding: 20px;
-    padding-top: 100px;
+    padding: 50px;
 }
 
 form.userForm{
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     background: #f4f6f9;
@@ -186,10 +187,33 @@ div.registerInputsConteiner{
     padding: 10px;
 }
 
-div#errorMessage{
-    background: #fff;
-    text-align: center;
-    color: red;
-    font-size: 20px;
-    padding: 10px;
+/* page user_add */
+
+div.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background: rgba(255, 255, 0, 0.288);
+}
+
+div.column{
+    flex: 1;
+    width: 100%;
+}
+
+div.column-4{
+    flex: 0 0 40%;
+}
+
+div.column-6{
+    flex: 0 0 60%;
+}
+
+div.column-4 h1.textTopForm{
+    font-size: 30px;
+    color: #f685a1;
+    border-bottom: 1px solid #f685a14b;
+    border-left: 4px solid #f685a1;
+    margin-bottom: 40px;
 }

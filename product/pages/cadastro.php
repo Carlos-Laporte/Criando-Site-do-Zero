@@ -1,6 +1,7 @@
 <?php
     session_start();
     $error_message = '';
+    $success_message = '';
 
     require_once('../configuration/connection.php');
     require_once('../authentication/guest.php');
@@ -42,9 +43,7 @@
                     ]);
                     
                     if ($result) {
-                        echo "DEBUG: Success! Redirecting...<br>";
-                        header("Location: login.php");
-                        exit();
+                        $success_message = "User registered successfully!";
                     } else {
                         $error_message = "Could not insert user.";
                     }
@@ -67,16 +66,9 @@
         <title>IMS Login - Inventory Management System</title>
         <link rel="stylesheet" href="../CSS/styleCadastro.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body id="registerBody">
-        <?php
-            if(!empty($error_message)) { ?>
-
-                <div id="errorMessage">
-                    <p>Error: <?= htmlspecialchars($error_message) ?></p>
-                </div>
-
-        <?php   } ?>
         <div class="container">
             <div class="registerHeader">
                 <h1>IMS</h1>
@@ -138,5 +130,34 @@
                 </form>
             </div>
         </div>
+
+        <!-- Popup Messages -->
+        <?php if(!empty($success_message)) { ?>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '<?= $success_message ?>',
+                    confirmButtonColor: '#3085d6'
+                }).then(() => {
+                    window.location.href = "login.php";
+                });
+            });
+            </script>
+        <?php } ?>
+
+        <?php if(!empty($error_message)) { ?>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: '<?= $error_message ?>',
+                    confirmButtonColor: '#d33'
+                });
+            });
+            </script>
+        <?php } ?>
     </body>
 </html>
