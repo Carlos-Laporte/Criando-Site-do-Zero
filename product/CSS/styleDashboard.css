@@ -128,7 +128,7 @@ div.dashboard_content{
 /* formulario de cadastro do user_add*/
 
 div#dashboard_content_form{
-    padding: 50px;
+    padding: 20px;
 }
 
 form.userForm{
@@ -136,8 +136,9 @@ form.userForm{
     margin: 0 auto;
     padding: 20px;
     background: #f4f6f9;
-    border: 1px solid #cecfd0;
+    border: none;
     border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.719);
 }
 
 form.userForm label{
@@ -194,7 +195,7 @@ div.row{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    background: rgba(255, 255, 0, 0.288);
+    height: 100%;
 }
 
 div.column{
@@ -204,16 +205,65 @@ div.column{
 
 div.column-4{
     flex: 0 0 40%;
+    padding-right: 30px;
 }
 
 div.column-6{
     flex: 0 0 60%;
+    justify-content: center;
 }
 
-div.column-4 h1.textTopForm{
+div.column-4 h2.textTopForm{
     font-size: 30px;
     color: #f685a1;
     border-bottom: 1px solid #f685a14b;
-    border-left: 4px solid #f685a1;
+    border-left: 5px solid #f685a1;
+    border-radius: 5px;
     margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.719);
+}
+
+div.column-6 h2.textTopList{
+    font-size: 30px;
+    color: #f685a1;
+    border-bottom: 1px solid #f685a14b;
+    border-left: 5px solid #f685a1;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.719);
+    margin-bottom: 40px;
+}
+
+div.containerDashboardTable{
+    display: flex;
+    max-height: 500px;
+    overflow-y: auto; 
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background: #f4f6f9;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.719);
+}
+
+div.column-6 table.dashboard_table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+div.column-6 table.dashboard_table thead tr{
+    background: #f685a1;
+    color: white;
+}
+
+div.column-6 table.dashboard_table tbody tr{
+    background: white;
+    border-bottom: 1px solid #d6d7da;
+}
+
+div.column-6 table.dashboard_table tbody tr:hover{
+    background: #f685a1c7;
+    transition: 0.01s all;
+    transform: scale(1.02);
 }
