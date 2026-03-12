@@ -267,3 +267,28 @@ div.column-6 table.dashboard_table tbody tr:hover{
     transition: 0.01s all;
     transform: scale(1.02);
 }
+
+.editBtn, .deleteBtn {
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 2px;
+    color: white;
+    transition: 0.2s all;
+}
+.editBtn {
+    background: #4e9af1;
+}
+.editBtn:hover {
+    background: #3a7fd4;
+    transform: scale(1.05);
+}
+.deleteBtn {
+    background: #e05c6e;
+}
+.deleteBtn:hover {
+    background: #c0394b;
+    transform: scale(1.05);
+}

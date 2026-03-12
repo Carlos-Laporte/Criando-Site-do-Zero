@@ -78,6 +78,7 @@
         <title>Dashboard - Inventory Management System</title>
         <link rel="stylesheet" href="../CSS/styleDashboard.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
@@ -117,13 +118,14 @@
                             <div class="column column-6">
                                 <h2 class="textTopList"><i class="bi bi-list-task"></i> User List</h2>
                                 <div class="containerDashboardTable">
-                                    <table class="dashboard_table">
+                                    <table id="userTable" class="dashboard_table">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Email</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +137,23 @@
                                                     echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
                                                     echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
                                                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                    $safeId    = htmlspecialchars($row['id'],         ENT_QUOTES);
+                                                    $safeFirst = htmlspecialchars($row['first_name'], ENT_QUOTES);
+                                                    $safeLast  = htmlspecialchars($row['last_name'],  ENT_QUOTES);
+                                                    $safeEmail = htmlspecialchars($row['email'],      ENT_QUOTES);
+                                                    echo "<td>
+                                                                <button class='editBtn'
+                                                                    data-id='{$safeId}'
+                                                                    data-first='{$safeFirst}'
+                                                                    data-last='{$safeLast}'
+                                                                    data-email='{$safeEmail}'>
+                                                                    <i class='bi bi-pencil-square'></i> Edit
+                                                                </button>
+                                                                <button class='deleteBtn'
+                                                                    data-id='{$safeId}'>
+                                                                    <i class='bi bi-trash'></i> Delete
+                                                                </button>
+                                                            </td>";
                                                     echo "</tr>";
                                                 }
                                             ?>
@@ -148,7 +167,18 @@
                 <!-- <div class="dashboard_content_footer"></div> -->
             </div>
         </div>
-        <script src="../assets/scripts.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
         <?php require_once('../includes/popup.php'); ?>
+
+        <script src="../assets/scriptTableInterativa.js"></script>
+
+        <script src="../assets/scriptPopupEdit.js"></script>
+
+        <script src="../assets/scripts.js"></script>
+
     </body>
 </html>
