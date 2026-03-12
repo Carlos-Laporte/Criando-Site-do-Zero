@@ -110,7 +110,7 @@
                     </div>
                     <div class="textIcons">
                         <div class="line"></div>
-                        <div class="text">Or login with</div>
+                        <div class="text">Or register with</div>
                         <div class="line"></div>
                     </div>
                     <div class="iconsCadastro">

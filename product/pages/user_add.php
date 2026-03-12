@@ -91,23 +91,23 @@
                     <div id="dashboard_content_form">
                         <div class="row">
                             <div class="column column-4">
-                                <h1 class="textTopForm"><i class="bi bi-plus"></i> Create User</h1>
+                                <h2 class="textTopForm"><i class="bi bi-plus"></i> Create User</h2>
                                 <form method="POST"  class="userForm">
                                     <div class="registerInputsConteiner">
                                         <label for="first_name">First name</label>
-                                        <input type="text" placeholder="First name" name="first_name" required>
+                                        <input type="text" id="first_name" placeholder="First name" name="first_name" required>
                                     </div>
                                     <div class="registerInputsConteiner">
                                         <label for="last_name">Last name</label>
-                                        <input type="text" placeholder="Last name" name="last_name" required>
+                                        <input type="text" id="last_name" placeholder="Last name" name="last_name" required>
                                     </div>
                                     <div class="registerInputsConteiner">
                                         <label for="email">Email</label>
-                                        <input type="email" placeholder="Email" name="email" required>
+                                        <input type="email" id="email" placeholder="Email" name="email" required>
                                     </div>
                                     <div class="registerInputsConteiner">
                                         <label for="password">Password</label>
-                                        <input type="password" placeholder="Password" name="password" required>
+                                        <input type="password" id="password" placeholder="Password" name="password" required>
                                     </div>
                                     <div class="registerButtonConteiner">
                                         <button><i class="bi bi-plus-lg"></i>Add User</button>
@@ -115,17 +115,40 @@
                                 </form>   
                             </div>
                             <div class="column column-6">
-                                <p>hi</p>
+                                <h2 class="textTopList"><i class="bi bi-list-task"></i> User List</h2>
+                                <div class="containerDashboardTable">
+                                    <table class="dashboard_table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $stmt = $conn->query("SELECT id, first_name, last_name, email FROM dashboard_users ORDER BY id DESC ");
+                                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                                    echo "<tr>";
+                                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                                    echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                                    echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dashboard_content_footer">
-                    
-                </div>
+                <!-- <div class="dashboard_content_footer"></div> -->
             </div>
         </div>
         <script src="../assets/scripts.js"></script>
-        <?php require_once('../includes/alerts.php'); ?>
+        <?php require_once('../includes/popup.php'); ?>
     </body>
 </html>
