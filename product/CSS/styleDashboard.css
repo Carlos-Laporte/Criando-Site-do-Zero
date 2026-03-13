@@ -295,13 +295,3 @@ button.deleteBtn:hover {
     background: #c0394b;
     transform: scale(1.05);
 }
-
-.submenu{
-    display:none;
-    list-style:none;
-    padding-left:20px;
-}
-
-.submenu.active{
-    display:block;
-}
