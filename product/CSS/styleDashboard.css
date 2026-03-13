@@ -11,13 +11,13 @@ body{
 }
 
 
-div.dashboard_sidebar{
-    width: 25%;
+div#dashboard_sidebar_i{
+    width: 20%;
     background: #323232;
     height: 100vh;
 }
 
-div.dashboard_content_conteiner{
+div#dashboard_content_conteiner{
     flex: 1;
 }
 
@@ -125,7 +125,7 @@ div.dashboard_content{
     background: white;
 }
 
-/* formulario de cadastro do user_add*/
+/* user_add registration form*/
 
 div#dashboard_content_form{
     padding: 20px;
@@ -223,6 +223,8 @@ div.column-4 h2.textTopForm{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.719);
 }
 
+/* dashboard user table */
+
 div.column-6 h2.textTopList{
     font-size: 30px;
     color: #f685a1;
@@ -235,7 +237,7 @@ div.column-6 h2.textTopList{
 
 div.containerDashboardTable{
     display: flex;
-    max-height: 500px;
+    max-height: 700px;
     overflow-y: auto; 
     width: 100%;
     padding: 20px;
@@ -249,7 +251,6 @@ div.containerDashboardTable{
 div.column-6 table.dashboard_table{
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
 }
 
 div.column-6 table.dashboard_table thead tr{
@@ -268,7 +269,9 @@ div.column-6 table.dashboard_table tbody tr:hover{
     transform: scale(1.02);
 }
 
-.editBtn, .deleteBtn {
+/* user table, the buttons style */
+
+button.editBtn, button.deleteBtn {
     border: none;
     border-radius: 4px;
     padding: 4px 10px;
@@ -278,17 +281,27 @@ div.column-6 table.dashboard_table tbody tr:hover{
     color: white;
     transition: 0.2s all;
 }
-.editBtn {
+button.editBtn {
     background: #4e9af1;
 }
-.editBtn:hover {
+button.editBtn:hover {
     background: #3a7fd4;
     transform: scale(1.05);
 }
-.deleteBtn {
+button.deleteBtn {
     background: #e05c6e;
 }
-.deleteBtn:hover {
+button.deleteBtn:hover {
     background: #c0394b;
     transform: scale(1.05);
+}
+
+.submenu{
+    display:none;
+    list-style:none;
+    padding-left:20px;
+}
+
+.submenu.active{
+    display:block;
 }
