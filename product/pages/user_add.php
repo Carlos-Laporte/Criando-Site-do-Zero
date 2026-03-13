@@ -1,7 +1,7 @@
 <?php
     session_start();
     $error_message = '';
-    $sucess_message = '';
+    $success_message = '';
 
     require_once('../configuration/connection.php');
 
@@ -59,7 +59,9 @@
                     ]);
 
                     if($result) {
-                        $sucess_message = "User added successfully.";
+                        $_SESSION['success_message'] = "User created successfully.";
+                        header("Location: user_add.php");
+                        exit();
                     }
     
                 } catch (PDOException $e) {
@@ -111,7 +113,7 @@
                                         <input type="password" id="password" placeholder="Password" name="password" required>
                                     </div>
                                     <div class="registerButtonConteiner">
-                                        <button><i class="bi bi-plus-lg"></i>Add User</button>
+                                        <button type="submit"><i class="bi bi-plus-lg"></i>Add User</button>
                                     </div>
                                 </form>   
                             </div>
@@ -180,5 +182,26 @@
 
         <script src="../assets/scripts.js"></script>
 
+        <?php if (!empty($_SESSION['success_message'])): ?>
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '<?= $_SESSION['success_message'] ?>',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+            <?php unset($_SESSION['success_message']); endif; ?>
+
+            <?php if (!empty($_SESSION['error_message'])): ?>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: '<?= $_SESSION['error_message'] ?>',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+            <?php unset($_SESSION['error_message']); endif; ?>
     </body>
 </html>
