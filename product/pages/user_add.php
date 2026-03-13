@@ -86,7 +86,7 @@
     <body>
         <div id="dashboardMainConteiner">
             <?php require_once('../includes/sidebar.php'); ?>
-            <div class="dashboard_content_conteiner" id="dashboard_content_conteiner">
+            <div id="dashboard_content_conteiner">
                 <?php require_once('../includes/nav.php') ?>
                 <div class="dashboard_espaço">
                 </div>
@@ -127,18 +127,22 @@
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Email</th>
+                                                <th>Created At</th>
+                                                <th>Updated At</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $stmt = $conn->query("SELECT id, first_name, last_name, email FROM dashboard_users ORDER BY id DESC ");
+                                                $stmt = $conn->query("SELECT id, first_name, last_name, email, created_at, updated_at FROM dashboard_users ORDER BY id DESC ");
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     echo "<tr>";
                                                     echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                                                     echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
                                                     echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
                                                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                    echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
+                                                    echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
                                                     $safeId    = htmlspecialchars($row['id'],         ENT_QUOTES);
                                                     $safeFirst = htmlspecialchars($row['first_name'], ENT_QUOTES);
                                                     $safeLast  = htmlspecialchars($row['last_name'],  ENT_QUOTES);
@@ -182,6 +186,7 @@
 
         <script src="../assets/scripts.js"></script>
 
+        <!-- SweetAlert2 provides success and error messages when refreshing the page. -->
         <?php if (!empty($_SESSION['success_message'])): ?>
             <script>
                 Swal.fire({
