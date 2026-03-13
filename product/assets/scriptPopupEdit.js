@@ -1,6 +1,7 @@
 $(document).ready(function () {
  
-    // ── EDIT ──────────────────────────────────────────────────────────────────
+    //edit user
+
     $(document).on('click', '.editBtn', function () {
  
         const userId    = $(this).data('id');
@@ -44,10 +45,20 @@ $(document).ready(function () {
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body    : params.toString()
             })
-            .then(r => r.text())
-            .then(() => {
-                Swal.fire('Updated!', 'User updated successfully.', 'success')
-                    .then(() => location.reload());
+            .then(r => {
+                if (!r.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return r.text();
+            })
+            .then(r => {
+
+                if (r.trim() !== 'success') {
+                    Swal.fire('Error', 'Could not update user.', 'error');
+                } else {
+                    Swal.fire('Updated!', 'User updated successfully.', 'success')
+                        .then(() => location.reload());
+                }
             })
             .catch(() => {
                 Swal.fire('Error', 'Could not update user.', 'error');
@@ -55,7 +66,8 @@ $(document).ready(function () {
         });
     });
  
-    // ── DELETE ────────────────────────────────────────────────────────────────
+    // delete user
+
     $(document).on('click', '.deleteBtn', function () {
  
         const userId = $(this).data('id');
@@ -75,10 +87,21 @@ $(document).ready(function () {
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body    : `id=${userId}`
             })
-            .then(r => r.text())
-            .then(() => {
-                Swal.fire('Deleted!', 'User removed successfully.', 'success')
+            .then(r => {
+                if (!r.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return r.text();
+            })
+            .then(r => {
+                if (r.trim() !== 'deleted') {
+                    Swal.fire('Error', 'Could not delete user.', 'error');
+                    return;
+                }else{
+                    Swal.fire('Deleted!', 'User removed successfully.', 'success')
                     .then(() => location.reload());
+                }
+                
             })
             .catch(() => {
                 Swal.fire('Error', 'Could not delete user.', 'error');
