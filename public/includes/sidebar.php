@@ -10,13 +10,11 @@
                 <a href="../pages/dashboard.php"><i class="bi bi-speedometer2"></i><span class="menuText">Dashboard</span></a>
             </li>
             <li>
-                <a href="../pages/user_add.php" id="addUserBnt"><i class="bi bi-person-fill-add"></i></i><span class="menuText">Add user</span>
-                    <ul id="dashboard_submenu_AddUser">
-                        <li><a href="../pages/products.php">Products</a></li>
-                        <li><a href="../pages/stocks.php">Stocks</a></li>
-                        <li><a href="../pages/supplier.php">Suppliers</a></li>
-                    </ul>
-                </a>
+                <a href="#" id="dropdown"><i class="bi bi-person-fill-add"></i></i><span class="menuText">Users Management</span></a>
+                <ul id="submenu">
+                    <li><a href="../pages/add_user.php"><i class="bi bi-person-fill-add"></i>Users Add</a></li>
+                    <li><a href="../pages/user_table.php"><i class="bi bi-table"></i>Users Table</a></li>
+                </ul>
             </li>
         </ul>
     </div>

@@ -47,5 +47,6 @@
             </div>
         </div>
         <script src="../assets/scripts.js"></script>
+        <script src="../assets/menuDashboard.js"></script>
     </body>
 </html>

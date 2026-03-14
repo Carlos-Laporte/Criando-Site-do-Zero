@@ -51,6 +51,24 @@ div.dashboard_sidebar_user span{
     display: inline-block;
 }
 
+/* menu retraction*/
+
+#submenu{
+    display:none;
+    list-style:none;
+    padding-left:20px;
+}
+
+#submenu li{
+    margin:5px 0;
+}
+
+.dropdown-btn{
+    cursor:pointer;
+}
+
+/*end*/
+
 
 ul.dashboard_menu_lists{
     list-style: none;
@@ -76,7 +94,7 @@ ul.dashboard_menu_lists li a i{
     padding-right: 10px;
 }
 
-ul.dashboard_menu_lists li:hover{
+ul.dashboard_menu_lists a:hover{
     background: #f685a1;
     color: white;
     transition: 0.8s all;
@@ -132,9 +150,10 @@ div#dashboard_content_form{
 }
 
 form.userForm{
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 100px auto;
     padding: 20px;
+    font-size: 30px;
     background: #f4f6f9;
     border: none;
     border-radius: 5px;
@@ -148,11 +167,10 @@ form.userForm label{
 
 div.registerInputsConteiner input{
     width: 100%;
-    height: 33px;
     padding: 10px;
     border: 1px solid #d6d7da;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 div.registerButtonConteiner{
@@ -191,9 +209,6 @@ div.registerInputsConteiner{
 /* page user_add */
 
 div.row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
     height: 100%;
 }
@@ -203,17 +218,7 @@ div.column{
     width: 100%;
 }
 
-div.column-4{
-    flex: 0 0 40%;
-    padding-right: 30px;
-}
-
-div.column-6{
-    flex: 0 0 60%;
-    justify-content: center;
-}
-
-div.column-4 h2.textTopForm{
+h2.textTopForm{
     font-size: 30px;
     color: #f685a1;
     border-bottom: 1px solid #f685a14b;
@@ -225,7 +230,7 @@ div.column-4 h2.textTopForm{
 
 /* dashboard user table */
 
-div.column-6 h2.textTopList{
+div.column h2.textTopList{
     font-size: 30px;
     color: #f685a1;
     border-bottom: 1px solid #f685a14b;
@@ -239,7 +244,9 @@ div.containerDashboardTable{
     display: flex;
     max-height: 700px;
     overflow-y: auto; 
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
     padding: 20px;
     justify-content: center;
     border: none;
@@ -248,22 +255,22 @@ div.containerDashboardTable{
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.719);
 }
 
-div.column-6 table.dashboard_table{
+table.dashboard_table{
     width: 100%;
     border-collapse: collapse;
 }
 
-div.column-6 table.dashboard_table thead tr{
+table.dashboard_table thead tr{
     background: #f685a1;
     color: white;
 }
 
-div.column-6 table.dashboard_table tbody tr{
+table.dashboard_table tbody tr{
     background: white;
     border-bottom: 1px solid #d6d7da;
 }
 
-div.column-6 table.dashboard_table tbody tr:hover{
+table.dashboard_table tbody tr:hover{
     background: #f685a1c7;
     transition: 0.01s all;
     transform: scale(1.02);
@@ -294,14 +301,4 @@ button.deleteBtn {
 button.deleteBtn:hover {
     background: #c0394b;
     transform: scale(1.05);
-}
-
-.submenu{
-    display:none;
-    list-style:none;
-    padding-left:20px;
-}
-
-.submenu.active{
-    display:block;
 }
