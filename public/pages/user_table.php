@@ -114,7 +114,9 @@
 
         <script src="../assets/scriptTableInterativa.js"></script>
 
-        <script src="../assets/scriptPopupEdit.js"></script>
+        <script src="../assets/popupUser.js"></script>
+
+        <script src="../assets/popupCrud.js"></script>
 
         <script src="../assets/scripts.js"></script>
 

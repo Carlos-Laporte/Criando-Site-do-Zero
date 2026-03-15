@@ -130,34 +130,7 @@
                 </form>
             </div>
         </div>
-
         <!-- Popup Messages -->
-        <?php if(!empty($success_message)) { ?>
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: '<?= $success_message ?>',
-                    confirmButtonColor: '#3085d6'
-                }).then(() => {
-                    window.location.href = "login.php";
-                });
-            });
-            </script>
-        <?php } ?>
-
-        <?php if(!empty($error_message)) { ?>
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: '<?= $error_message ?>',
-                    confirmButtonColor: '#d33'
-                });
-            });
-            </script>
-        <?php } ?>
+        <?php require_once('../includes/popup.php'); ?>
     </body>
 </html>
