@@ -51,6 +51,20 @@
 
         $stmt->execute([$product, $codigo, $comment]);
 
+    }else if($page === "user"){
+
+        $first = $_POST['supplier_name'];
+        $last = $_POST['supplier_location'];
+        $email = $_POST['email'];
+
+        $stmt = $conn->prepare("
+            UPDATE dashboard_users
+            SET first_name=?, last_name=?, email=?
+            WHERE id=?
+        ");
+
+        $stmt->execute([$first,$last,$email,$id]);
+
     }else{
         echo "invalid page";
         exit;
